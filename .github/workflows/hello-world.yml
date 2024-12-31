@@ -31,4 +31,4 @@ jobs:
       - name: List of checkout files
         run: |
           pwd
-          ls
+          ls -ll
