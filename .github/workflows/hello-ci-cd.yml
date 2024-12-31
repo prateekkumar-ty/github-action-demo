@@ -39,9 +39,9 @@ jobs:
       - name: secrets context
         run: |
             echo API_KEY: ${{ secrets.API_KEY }}
-            API_KEY
+            ${{ secrets.API_KEY }}
             echo API_SECRET: ${{ secrets.API_SECRET }}
-            API_SECRET
+            ${{ secrets.API_SECRET }}
           
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       #- uses: actions/checkout@v4
