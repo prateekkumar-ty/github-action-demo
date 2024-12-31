@@ -78,9 +78,19 @@ jobs:
             ${{ secrets.API_KEY }}
             echo API_SECRET: ${{ secrets.API_SECRET }}
             ${{ secrets.API_SECRET }}
+            
+  external-context-variables:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    steps:  
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      #- uses: actions/checkout@v4
-      #- name: List of checkout files
-      #  run: |
-      #    pwd
-      #    ls -ll
+      - uses: actions/checkout@v4
+      - name: checkout repo directory
+        run: pwd
+      - name: repo files list
+        run: ls -ll
+      - name: giving extarnal.sh file execute permission
+        run: chmod -x external.sh
+      - name: execute external.sh file
+        run: ./external.sh
