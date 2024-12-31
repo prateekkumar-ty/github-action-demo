@@ -91,6 +91,6 @@ jobs:
       - name: repo files list
         run: ls -ll
       - name: giving extarnal.sh file execute permission
-        run: chmod -x external.sh
+        run: chmod +x external.sh
       - name: execute external.sh file
         run: ./external.sh
